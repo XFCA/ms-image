@@ -4,7 +4,7 @@ A Dify plugin based on ModelScope API‑Inference, providing text‑to‑image a
 
 ## Features
 
-- **Multi‑model support**: Switch freely by specifying the model ID in the parameters. Supported models include `Tongyi-MAI/Z-Image-Turbo`, `PAI/FLUX.1-dev`, `PAI/FLUX.1-schnell`, and many others from the ModelScope AIGC collection.
+- **Multi‑model support**: Switch freely by specifying the model ID in the parameters. Supported models include `Tongyi-MAI/Z-Image-Turbo`、`MusePublic/489_ckpt_FLUX_1`、`Qwen/Qwen-Image-2512`, and many others from the ModelScope AIGC collection.
 - **Text‑to‑image**: Generate images from text prompts. Supports positive/negative prompts, aspect ratio, resolution, seed, sampling steps, guidance scale, and LoRA models.
 - **Image‑to‑image**: Use an uploaded image as a template and generate a new image guided by a text prompt. All parameters available in text‑to‑image are supported, plus an "original" aspect ratio option to preserve the input image’s proportions.
 - **Comprehensive parameter tuning**:
