@@ -24,6 +24,7 @@ You need a ModelScope API Key before using this plugin:
 - Visit [ModelScope Access Token page](https://modelscope.cn/my/myaccesstoken)
 - Log in to your account
 - Create or copy your API key (usually starts with `ms-xxxxxx`)
+  ![API KEY](_assets/api_key.png)
 
 ### 2. Install the Plugin in Dify
 
