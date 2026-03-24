@@ -85,6 +85,10 @@ ms-image/
 │   ├── text2image.py           # 文生图实现
 │   ├── image2image.yaml        # 图生图工具定义
 │   └── image2image.py          # 图生图实现
+├── readme/
+│   └── README_zh_Hans.md       # 中文readme
+├── README.md                   # 英文 readme
+├── PRIVACY.md                  # 隐私协议
 └── icon.svg                    # 插件图标
 ```
 

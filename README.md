@@ -47,7 +47,7 @@ This is required for internal container communication. Without it, the image‑t
 
 ## Usage Examples
 
-### 文生图
+### Text‑to‑image
 
 ```
 model: "Tongyi-MAI/Z-Image-Turbo"
@@ -57,12 +57,12 @@ resolution: 1080
 ```
 ![text-to-image](_assets/text2image.png)
 
-### 图生图
+### Image‑to‑image
 
 ```
 model: "MusePublic/489_ckpt_FLUX_1"
 prompt: Turn this picture into an anime style, keeping the content and composition unchanged."
-image: [上传的图像文件]
+image: [uploaded image file]
 aspect_ratio: "original"
 resolution: 1080
 loras: "liurui20111959/Ghibli_Style_2"
@@ -85,6 +85,10 @@ ms-image/
 │   ├── text2image.py           # Text‑to‑image implementation
 │   ├── image2image.yaml        # Image‑to‑image tool definition
 │   └── image2image.py          # Image‑to‑image implementation
+├── readme/
+│   └── README_zh_Hans.md       # Chinese readme
+├── README.md                   # English readme
+├── PRIVACY.md                  # Privacy Policy
 └── icon.svg                    # Plugin icon
 ```
 
