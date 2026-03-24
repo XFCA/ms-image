@@ -1,0 +1,178 @@
+identity:
+  name: "image2image"
+  author: "jinhaow"
+  label:
+    en_US: "image2image"
+    zh_Hans: "image2image"
+description:
+  human:
+    en_US: "A tool for image-to-image generation using ModelScope's API-Inference."
+    zh_Hans: "调用ModelScope的API-Inference进行图生图的工具。"
+  llm: "When you need to perform image-to-image operations, use this tool and provide parameters such as prompts and image URLs."
+
+parameters:
+  - name: model
+    type: string
+    required: false
+    label:
+      en_US: "model"
+      zh_Hans: "模型"
+    human_description:
+      en_US: "Model ID"
+      zh_Hans: "模型ID"
+    llm_description: "The name of the model on the ModelScope"
+    form: form
+    default: "Tongyi-MAI/Z-Image-Turbo"
+
+  - name: prompt
+    type: string
+    required: true
+    label:
+      en_US: "prompt"
+      zh_Hans: "提示词"
+    human_description:
+      en_US: "Positive prompts, English is recommended."
+      zh_Hans: "正向提示词，建议使用英文。"
+    llm_description: "Positive prompts, English is recommended."
+    form: llm
+
+  - name: neg_prompt
+    type: string
+    required: false
+    label:
+      en_US: "Negative Prompt"
+      zh_Hans: "负向提示词"
+    human_description:
+      en_US: "Negative prompts, English is recommended."
+      zh_Hans: "负向提示词，建议使用英文。"
+    llm_description: "Negative prompts, English is recommended."
+    form: llm
+
+  - name: image
+    type: file
+    required: true
+    label:
+      en_US: "Image"
+      zh_Hans: "图片文件"
+    human_description:
+      en_US: "The image file used as a template."
+      zh_Hans: "作为模板的图片文件。"
+    llm_description: "The image file used as a template."
+    form: llm
+
+  - name: aspect_ratio
+    type: select
+    required: true
+    label:
+      en_US: "Aspect Ratio"
+      zh_Hans: "宽高比"
+    human_description:
+      en_US: "The aspect ratio of the image."
+      zh_Hans: "图片宽高比。"
+    llm_description: "The aspect ratio of the image"
+    form: llm
+    options:
+      - value: "original"
+        label:
+          en_US: "Original Image"
+          zh_Hans: "原图"
+      - value: "1:1"
+        label:
+          en_US: "1:1"
+          zh_Hans: "1:1"
+      - value: "4:3"
+        label:
+          en_US: "4:3"
+          zh_Hans: "4:3"
+      - value: "3:4"
+        label:
+          en_US: "3:4"
+          zh_Hans: "3:4"
+      - value: "16:9"
+        label:
+          en_US: "16:9"
+          zh_Hans: "16:9"
+      - value: "9:16"
+        label:
+          en_US: "9:16"
+          zh_Hans: "9:16"
+      - value: "2:1"
+        label:
+          en_US: "2:1"
+          zh_Hans: "2:1"
+      - value: "1:2"
+        label:
+          en_US: "1:2"
+          zh_Hans: "1:2"
+    default: "original"
+
+  - name: resolution
+    type: number
+    min: 64
+    max: 2048
+    required: true
+    label:
+      en_US: "Resolution"
+      zh_Hans: "分辨率"
+    human_description:
+      en_US: "The resolution of the image."
+      zh_Hans: "图片分辨率。"
+    llm_description: "The resolution of the image."
+    form: form
+    default: 1080
+
+  - name: seed
+    type: number
+    min: 0
+    required: false
+    label:
+      en_US: "Seed"
+      zh_Hans: "随机种子"
+    human_description:
+      en_US: "seed."
+      zh_Hans: "随机种子。"
+    llm_description: "seed."
+    form: form
+
+  - name: steps
+    type: number
+    min: 1
+    max: 100
+    required: false
+    label:
+      en_US: "Steps"
+      zh_Hans: "采样步数"
+    human_description:
+      en_US: "steps."
+      zh_Hans: "采样步数。"
+    llm_description: "steps."
+    form: form
+
+  - name: guidance
+    type: number
+    min: 1.5
+    max: 20
+    required: false
+    label:
+      en_US: "Guidance"
+      zh_Hans: "引导系数"
+    human_description:
+      en_US: "Prompt guidance coefficient."
+      zh_Hans: "提示词引导系数。"
+    llm_description: "Prompt guidance coefficient."
+    form: form
+
+  - name: loras
+    type: string
+    required: false
+    label:
+      en_US: "LoRA Model"
+      zh_Hans: "LoRA模型"
+    human_description:
+      en_US: "LoRA models, used for style transfer or detail enhancement. Please look for LoRA models compatible with the base model in the ModelScope AIGC section model library."
+      zh_Hans: "LoRA模型，用于风格迁移或细节增强。请在ModelScope AIGC专区模型库查找与基础模型兼容的LoRA模型。"
+    llm_description: "LoRA models, used for style transfer or detail enhancement."
+    form: form
+extra:
+  python:
+    source: tools/image2image.py
